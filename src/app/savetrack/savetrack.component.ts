@@ -57,12 +57,6 @@ export class SavetrackComponent implements OnInit {
         console.log("some error occured");
         console.log(error.errorMessage);
       }
-         
-
     );
-
-
-   
   }
-
 }

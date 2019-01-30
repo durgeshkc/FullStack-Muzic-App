@@ -11,6 +11,7 @@ import { MizixHttpService } from '../mizix-http.service';
 })
 export class LastfmComponent implements OnInit {
 
+  // public imageurl : string;
   public alltracks;
   constructor(public _route: ActivatedRoute,private router: Router,public muzixservice:MizixHttpService) { }
 
@@ -22,19 +23,18 @@ export class LastfmComponent implements OnInit {
     this.alltracks=this.muzixservice.searchtrack(trackname).subscribe(
       
       data => {
-       
+        
+        //trackmatches.track.image[1]['#text']
         this.alltracks = data;
+       // console.log(this.alltracks.results.trackmatches.track[0].image[2]['#text']);
+        // this.imageurl = this.alltracks.results.trackmatches.track[0].image[2]['#text'];
+        //console.log("i am here"+this.imageurl);
        
       },
       error =>{
         console.log("some error occured");
         console.log(error.errorMessage)
       }
-
-
-    );
-   
-
-   
+    ); 
   }
 }
